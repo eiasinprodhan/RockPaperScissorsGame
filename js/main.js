@@ -61,7 +61,6 @@ function gameResults(userInput, computerInput) {
     ) {
         setTimeout(finalResults, 1000);
         function finalResults(){
-            
         gameResultH2.innerHTML = "You Win";
         user.src = "images/" + gameData(userInput) + ".png";
         computer.src = "images/" + gameData(computerInput) + ".png";
@@ -118,5 +117,8 @@ function show() {
     gameResult.style.display = "none";
     user.src = "images/Rock.png";
     computer.src = "images/Rock.png";
+    gameResultH2.innerHTML = "Loading...";
+    imageUser.innerHTML = "Loading...";
+    imageComputer.innerHTML = "Loading...";
 }
 
