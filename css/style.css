@@ -27,3 +27,31 @@
 #computer{
     transform: rotate(-90deg);
 }
+
+.userShake{
+    animation: userShake 1s alternate;
+}
+
+@keyframes userShake {
+    0%{
+        transform: rotate(100deg);
+    }
+
+    100%{
+        transform: rotate(80deg);
+    }
+}
+
+.computerShake{
+    animation: computerShake 1s alternate;
+}
+
+@keyframes computerShake {
+    0%{
+        transform: rotate(-100deg);
+    }
+
+    100%{
+        transform: rotate(-80deg);
+    }
+}

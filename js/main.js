@@ -9,11 +9,14 @@ let gameResultH3 = document.querySelector("#gameResult h3");
 let result;
 let user = document.getElementById("user");
 let computer = document.getElementById("computer");
-function randomIntFromInterval(min, max) { 
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  }
 
-  let computerInput;
+function randomIntFromInterval(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+
+
+let computerInput;
 
 let userInput;
 
@@ -23,10 +26,11 @@ let computerPoints = document.getElementById("computerPoints");
 let userPoint = 0;
 let computerPoint = 0;
 
+
 let imageUser = document.getElementById("imageUser");
 let imageComputer = document.getElementById("imageComputer");
 
-rockButton.addEventListener("click", ()=>{
+rockButton.addEventListener("click", () => {
     computerInput = randomIntFromInterval(1, 3);
     gameBoard.style.display = "none";
     gameResult.style.display = "block";
@@ -34,7 +38,7 @@ rockButton.addEventListener("click", ()=>{
     gameResults(userInput, computerInput);
 });
 
-paperButton.addEventListener("click", ()=>{
+paperButton.addEventListener("click", () => {
     computerInput = randomIntFromInterval(1, 3);
     gameBoard.style.display = "none";
     gameResult.style.display = "block";
@@ -42,7 +46,7 @@ paperButton.addEventListener("click", ()=>{
     gameResults(userInput, computerInput);
 });
 
-scissorsButton.addEventListener("click", ()=>{
+scissorsButton.addEventListener("click", () => {
     computerInput = randomIntFromInterval(1, 3);
     gameBoard.style.display = "none";
     gameResult.style.display = "block";
@@ -50,43 +54,53 @@ scissorsButton.addEventListener("click", ()=>{
     gameResults(userInput, computerInput);
 });
 
-  function gameResults(userInput, computerInput){
-    if(userInput==1 && computerInput==3
-        || userInput==2 && computerInput==1
-        || userInput==3 && computerInput==2
-    ){
+function gameResults(userInput, computerInput) {
+    if (userInput == 1 && computerInput == 3
+        || userInput == 2 && computerInput == 1
+        || userInput == 3 && computerInput == 2
+    ) {
+        setTimeout(finalResults, 1000);
+        function finalResults(){
+            
         gameResultH2.innerHTML = "You Win";
         user.src = "images/" + gameData(userInput) + ".png";
         computer.src = "images/" + gameData(computerInput) + ".png";
-        imageUser.innerHTML = gameData(userInput).toUpperCase();
-        imageComputer.innerHTML = gameData(computerInput).toUpperCase();
+        imageUser.innerHTML = gameData(userInput);
+        imageComputer.innerHTML = gameData(computerInput);
         userPoint++;
         userPoints.innerHTML = userPoint;
         computerPoints.innerHTML = computerPoint;
+        }
     }
-    else if(userInput == computerInput){
-        gameResultH2.innerHTML ="Match Draw, Play Again";
+    else if (userInput == computerInput) {
+        setTimeout(finalResults, 1000);
+        function finalResults(){
+        gameResultH2.innerHTML = "Match Draw, Play Again";
         user.src = "images/" + gameData(userInput) + ".png";
         computer.src = "images/" + gameData(computerInput) + ".png";
-        imageUser.innerHTML = gameData(userInput).toUpperCase();
-        imageComputer.innerHTML = gameData(computerInput).toUpperCase();
-        userPoints.innerHTML = userPoint;
-        computerPoints.innerHTML = computerPoint;
+        imageUser.innerHTML = gameData(userInput);
+        imageComputer.innerHTML = gameData(computerInput);
+        userPoints.innerHTML = "You: " + userPoint;
+        computerPoints.innerHTML = "Computer: " + computerPoint;
+        }
     }
-    else{
+    else {
+        setTimeout(finalResults, 1000);
+        function finalResults(){
         gameResultH2.innerHTML = "You Lose";
         user.src = "images/" + gameData(userInput) + ".png";
         computer.src = "images/" + gameData(computerInput) + ".png";
-        imageUser.innerHTML = gameData(userInput).toUpperCase();
-        imageComputer.innerHTML = gameData(computerInput).toUpperCase();
+        imageUser.innerHTML = gameData(userInput);
+        imageComputer.innerHTML = gameData(computerInput);
         computerPoint++;
-        userPoints.innerHTML = userPoint;
-        computerPoints.innerHTML = computerPoint;
+        userPoints.innerHTML = "You: " + userPoint;
+        computerPoints.innerHTML = "Computer: " + computerPoint;
+        }
     }
-  }
+}
 
-  function gameData(input){
-    switch(input){
+function gameData(input) {
+    switch (input) {
         case 1:
             return "rock";
             break;
@@ -97,9 +111,12 @@ scissorsButton.addEventListener("click", ()=>{
             return "scissors";
             break;
     }
-  }
+}
 
-  function show(){
+function show() {
     gameBoard.style.display = "block";
     gameResult.style.display = "none";
-  }
+    user.src = "images/Rock.png";
+    computer.src = "images/Rock.png";
+}
+
