@@ -70,6 +70,8 @@ scissorsButton.addEventListener("click", ()=>{
         computer.src = "images/" + gameData(computerInput) + ".png";
         imageUser.innerHTML = gameData(userInput).toUpperCase();
         imageComputer.innerHTML = gameData(computerInput).toUpperCase();
+        userPoints.innerHTML = userPoint;
+        computerPoints.innerHTML = computerPoint;
     }
     else{
         gameResultH2.innerHTML = "You Lose";
