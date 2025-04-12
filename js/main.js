@@ -74,7 +74,7 @@ function gameResults(userInput, computerInput) {
     else if (userInput == computerInput) {
         setTimeout(finalResults, 1000);
         function finalResults(){
-        gameResultH2.innerHTML = "Match Draw, Play Again";
+        gameResultH2.innerHTML = "Draw";
         user.src = "images/" + gameData(userInput) + ".png";
         computer.src = "images/" + gameData(computerInput) + ".png";
         imageUser.innerHTML = gameData(userInput);
@@ -86,7 +86,7 @@ function gameResults(userInput, computerInput) {
     else {
         setTimeout(finalResults, 1000);
         function finalResults(){
-        gameResultH2.innerHTML = "You Lose";
+        gameResultH2.innerHTML = "Computer Win";
         user.src = "images/" + gameData(userInput) + ".png";
         computer.src = "images/" + gameData(computerInput) + ".png";
         imageUser.innerHTML = gameData(userInput);
