@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,52 +6,56 @@
 }
 
 
-#rock, #paper, #scissors{
+#rock,
+#paper,
+#scissors {
     border-radius: 25px;
 }
 
-#rock:hover, #paper:hover, #scissors:hover{
+#rock:hover,
+#paper:hover,
+#scissors:hover {
     transition: 0.5s ease-in-out;
     box-shadow: 0px 0px 5px rgb(107, 107, 107),
-    0px 0px 10px rgb(107, 107, 107);
+        0px 0px 10px rgb(107, 107, 107);
 }
 
-#gameResult{
+#gameResult {
     display: none;
 }
 
-#user{
+#user {
     transform: rotate(90deg);
 }
 
-#computer{
+#computer {
     transform: rotate(-90deg);
 }
 
-.userShake{
+.userShake {
     animation: userShake 1s alternate;
 }
 
 @keyframes userShake {
-    0%{
+    0% {
         transform: rotate(100deg);
     }
 
-    100%{
+    100% {
         transform: rotate(80deg);
     }
 }
 
-.computerShake{
+.computerShake {
     animation: computerShake 1s alternate;
 }
 
 @keyframes computerShake {
-    0%{
+    0% {
         transform: rotate(-100deg);
     }
 
-    100%{
+    100% {
         transform: rotate(-80deg);
     }
 }
