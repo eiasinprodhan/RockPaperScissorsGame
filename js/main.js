@@ -67,8 +67,8 @@ function gameResults(userInput, computerInput) {
         imageUser.innerHTML = gameData(userInput);
         imageComputer.innerHTML = gameData(computerInput);
         userPoint++;
-        userPoints.innerHTML = userPoint;
-        computerPoints.innerHTML = computerPoint;
+        userPoints.innerHTML = "You: " + userPoint;
+        computerPoints.innerHTML = "Computer: " + computerPoint;
         }
     }
     else if (userInput == computerInput) {
